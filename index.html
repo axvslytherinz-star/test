@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AXV Research — A Private Archive of Structured Thought</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/theme.css" />
+  <script defer src="assets/js/private.js"></script>
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">AXV Elite</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="research.html">Research</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <div class="profile-dropdown" id="profileDropdown" style="display:none;position:relative;">
+          <button id="profileBtn" class="profile-btn" aria-haspopup="true" aria-expanded="false" style="background:none;border:none;padding:0;cursor:pointer;outline:none;">
+            <span id="profileIcon" class="profile-icon" style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:2px solid var(--accent);background:rgba(127,90,240,0.08);box-shadow:0 2px 8px #7f5af033;">
+              <!-- SVG icon will be injected by JS -->
+            </span>
+          </button>
+          <div class="profile-menu" id="profileMenu" style="display:none;position:absolute;right:0;top:100%;background:#222;color:#fff;min-width:160px;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.18);z-index:1000;">
+            <div class="profile-info" style="padding:12px 16px;border-bottom:1px solid #333;"></div>
+            <button id="logoutBtn" style="width:100%;background:#c00;color:#fff;padding:10px 0;border:none;border-radius:0 0 6px 6px;font-weight:bold;cursor:pointer;">Exit</button>
+          </div>
+        </div>
+      </nav>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">0</button>
+    </div>
+  </header>
+
+  <main class="container" id="content">
+    <section class="intro">
+      <h1 class="headline">A Private Archive of Structured Thought</h1>
+      <p class="subhead">Independent research, analytical notes, and quiet observations on systems, technology, organizations, and emerging risks.</p>
+    </section>
+
+    <section class="latest">
+      <h2>Latest Research</h2>
+      <ol class="list research-list">
+        <li>
+          <h3><a href="articles/ai-and-strategic-control.html">Artificial Intelligence and Strategic Control</a></h3>
+          <p class="abstract">This paper examines how artificial intelligence alters strategic decision authority within modern organizational structures. It traces institutional shifts and the resulting implications for governance and risk allocation.</p>
+          <p class="meta">2025 · Systems · Strategy</p>
+        </li>
+
+        <li>
+          <h3><a href="articles/coordination-failure-in-supply-networks.html">Coordination Failure in Global Supply Networks</a></h3>
+          <p class="abstract">A study on how subtle structural misalignments compound under stress, creating persistent fragility across networked supply systems.</p>
+          <p class="meta">2024 · Networks · Risk</p>
+        </li>
+
+        <li>
+          <h3><a href="articles/organizational-memory-loss.html">The Dynamics of Organizational Memory Loss</a></h3>
+          <p class="abstract">An analytical framework for understanding how organizations lose procedural memory and the long-term effects on resilience and learning.</p>
+          <p class="meta">2024 · Organizations · Theory</p>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+      <!-- Login Modal -->
+      <div id="loginModal" style="display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;">
+        <form id="loginForm" style="background:#181824;padding:32px 20px 24px 20px;border-radius:14px;max-width:370px;width:96vw;box-shadow:0 2px 24px #0a0a13cc;display:flex;flex-direction:column;gap:18px;align-items:center;">
+          <h2 style="margin:0 0 10px 0;font-size:1.25em;color:var(--accent);text-align:center;letter-spacing:0.04em;">Sign In</h2>
+          <div style="display:flex;gap:0;justify-content:center;width:100%;margin-bottom:10px;">
+            <button type="button" id="tabUser" class="login-tab" style="flex:1;padding:10px 0;border-radius:8px 0 0 8px;border:none;background:#23233a;color:#e6e6f0;font-weight:600;font-size:1em;transition:background 0.18s;">User (Ignito)</button>
+            <button type="button" id="tabAdmin" class="login-tab" style="flex:1;padding:10px 0;border-radius:0 8px 8px 0;border:none;background:#181824;color:#7f5af0;font-weight:600;font-size:1em;transition:background 0.18s;">Admin</button>
+          </div>
+          <div id="userFields" style="width:100%;display:flex;flex-direction:column;gap:12px;">
+            <input id="ignitoPass" type="password" placeholder="Password (austin, xavian, vaughn)" style="padding:12px 10px;font-size:1em;border-radius:7px;border:1px solid #23233a;background:#23233a;color:#e6e6f0;outline:none;" autocomplete="current-password" />
+            <input id="ignitoId" type="text" placeholder="Ignito ID (optional, random if blank)" style="padding:12px 10px;font-size:1em;border-radius:7px;border:1px solid #23233a;background:#23233a;color:#e6e6f0;outline:none;" autocomplete="off" />
+          </div>
+          <div id="adminFields" style="display:none;flex-direction:column;gap:12px;width:100%;">
+            <input id="adminId" type="text" placeholder="Admin ID" style="padding:12px 10px;font-size:1em;border-radius:7px;border:1px solid #23233a;background:#23233a;color:#e6e6f0;outline:none;" autocomplete="off" />
+            <input id="adminUser" type="text" placeholder="Admin Username" style="padding:12px 10px;font-size:1em;border-radius:7px;border:1px solid #23233a;background:#23233a;color:#e6e6f0;outline:none;" autocomplete="username" />
+            <input id="adminPass" type="password" placeholder="Admin Password" style="padding:12px 10px;font-size:1em;border-radius:7px;border:1px solid #23233a;background:#23233a;color:#e6e6f0;outline:none;" autocomplete="current-password" />
+          </div>
+          <button type="submit" style="background:linear-gradient(90deg,#7f5af0 60%,#23233a 100%);color:#fff;padding:12px 0;border:none;border-radius:7px;font-weight:bold;font-size:1em;width:100%;margin-top:6px;box-shadow:0 2px 8px #7f5af055;">Login</button>
+          <div id="loginMsg" style="color:#ff4a4a;font-size:0.98em;text-align:center;min-height:1.5em;"></div>
+        </form>
+      </div>
+    <div class="container">
+      <small>© 2026 AXV Research &nbsp; All rights reserved. &nbsp; <a href="privacy.html">Privacy</a> · <a href="rss.xml">RSS</a></small>
+    </div>
+  </footer>
+
+  <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true">
+    <nav class="overlay-nav" aria-label="Mobile">
+      <a href="research.html">Research</a>
+      <a href="blog.html">Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</body>
+<script defer src="assets/js/auth.js"></script>
+</html>

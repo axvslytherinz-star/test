@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>AXV Elite — RSS</title>
+    <link>/index.html</link>
+    <description>Recent publications and notes</description>
+    <lastBuildDate>Wed, 04 Feb 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>Artificial Intelligence and Strategic Control</title>
+      <link>articles/ai-and-strategic-control.html</link>
+      <pubDate>Mon, 01 Jan 2025 00:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>
